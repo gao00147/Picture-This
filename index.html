@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header class="header">
     <div class="title">
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
 
+    <picture>
+      <!-- Desktop 960px and above Landscape -->
+      <source
+        srcset="
+          images/landscape_960.jpg 1x,
+          images/landscape_1920.jpg 2x
+        "
+        media="(min-width: 960px)"
+      />
+
+      <!-- Below 960px Square -->
+      <source
+        srcset="
+          images/square_480.jpg 1x,
+          images/square_960.jpg 2x
+        "
+        media="(max-width: 959px)"
+      />
+
+      <!-- Fallback -->
+      <img
+        src="images/square_480.jpg"
+        alt="Interior of an art gallery with framed paintings and seating area"
+      />
+    </picture>
   </header>
 </body>
-
 </html>
